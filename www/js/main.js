@@ -281,6 +281,7 @@ var BB = {
 
 
 function init() {
+  ncmbController.init(BB.screenSize);
     // Accelerometer
     /*
     if (typeof navigator.accelerometer !== 'undefined' && !accelerationWatch) {
