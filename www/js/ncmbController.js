@@ -1,8 +1,8 @@
 // ncmbController.js
 
 var ncmbController = {
-    APPLICATION_KEY: "YOUR_APPLICATION_KEY",
-    CLIENT_KEY: "YOUR_CLIENT_KEY",
+    APPLICATION_KEY: "e9548c341631133d81836f003f35fe74c19584b324ee4072ea880036e547fc4f",
+    CLIENT_KEY: "69da3db48fa4bc0b6f6e4fb2a50c6b2d239bce3b1ebb1e1426458c3e747c3c2e",
 
     ncmb: null,
     currentUser: null,  // ログインしたユーザーのオブジェクトを格納
