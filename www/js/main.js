@@ -38,9 +38,14 @@ var BB = {
     scoreLabel: null,
     accelLabel: null,
     isMouseDown: false,
-    
+    // Game end
+    endGame: function() {
+    BB.gameState = GAMESTATE_STOP;
+    vibrate();
+    },
+
     // Create blocks map
-    setMap: function() {
+    setMap : function() {
         var blockMap = [
             [null,      null,       null,       null,       null,       'blue',     null,       null,       null,       null],
             [null,      null,       null,       null,       'red',      'red',      'blue',     null,       null,       null],
@@ -268,6 +273,7 @@ var BB = {
     endGame: function() {
         BB.gameState = GAMESTATE_STOP;
         vibrate();
+        ncmbController.sendScore(BB.score);
     },
     
     // Game Clear
@@ -276,12 +282,13 @@ var BB = {
         else alert("Cleared!");
         
         BB.gameState = GAMESTATE_STOP;
+         ncmbController.sendScore(BB.score);
     }
 }
 
 
 function init() {
-  ncmbController.init(BB.screenSize);
+  
     // Accelerometer
     /*
     if (typeof navigator.accelerometer !== 'undefined' && !accelerationWatch) {
@@ -338,6 +345,7 @@ function init() {
     });
 
     requestAnimFrame(animate);
+    ncmbController.init(BB.screenSize);
 }
 
 
